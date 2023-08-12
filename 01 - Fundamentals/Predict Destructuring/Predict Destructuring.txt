@@ -1,0 +1,14 @@
+//1
+no error will be thrown, name of the variables doesn't matter, we just need to make sure we're not outside of the array range
+
+//2
+we'll get "undefined" error because we only declared "otherName" after the ":", so "name" isn't declared at all, we can fix it by simply doing "const {name} = employee;" instead!
+
+//3
+logging "const password = "12345";" wont cause an error because we simply declared a new variable and gave it a value of "12345", but "const { password: hashedPassword } = person;" will throw an error because the "person" object does not have a password key-pair in the first place
+
+//4
+no error will be thrown, we're just comparing array data with each other, and logging a boolean output within range, first is "false" and second is "true"
+
+//5
+no error will be thrown, we simply have access to "secondKey" because it's been declared right before "willThisWork", if we didn't declare the variable "secondKey" from the object "lastTest" it wouldn't work.
