@@ -1,6 +1,6 @@
 import React, { useState } from  'react';
 
-const UserForm = (props) => {
+const UserForm = () => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -11,7 +11,7 @@ const UserForm = (props) => {
         // we must prevent the default refresh of the browser to keep our state from being reset
         e.preventDefault();
         // shorthand ES6 syntax for building an object - see notes above
-        const newUser = { firstName, lastName ,email, password, confirmPassword };
+        // const newUser = { firstName, lastName ,email, password, confirmPassword };
     };
     
     return(
