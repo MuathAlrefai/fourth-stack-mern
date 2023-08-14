@@ -10,7 +10,6 @@ const UserForm = (props) => {
     const createUser = (e) => {
         // we must prevent the default refresh of the browser to keep our state from being reset
         e.preventDefault();
-        
         // shorthand ES6 syntax for building an object - see notes above
         const newUser = { firstName, lastName ,email, password, confirmPassword };
     };
@@ -37,9 +36,8 @@ const UserForm = (props) => {
              <div>
                 <label>Confirm Password: </label>
                 <input type="text" value={confirmPassword} onChange={ (e) => setConfirmPassword(e.target.value) } />
-            <input type="submit" value="Create User" />
             </div>
-
+            <input type="submit" value="Create User" />
         </form>
 
         <p>First Name : {firstName}</p>
