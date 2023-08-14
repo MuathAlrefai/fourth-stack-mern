@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import '../khaled.css'
 
 const PersonCard = (props) => {
 
@@ -7,7 +8,7 @@ const PersonCard = (props) => {
 
 
     return (
-      <div>
+      <div className="khaled">
         <h1>
           My name is {props.firstName} {props.lastName}
         </h1>
