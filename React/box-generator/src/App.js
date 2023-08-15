@@ -1,24 +1,22 @@
-import React, { useState } from 'react';
-import MessageForm from './components/MessageForm';
-import MessageDisplay from './components/MessageDisplay';
-    
-    
+import  React, { useState } from "react";
+import BoxForm from "./components/BoxForm";
+import Box from "./components/Box";
+
 function App() {
-    const [currentColor, setCurrentColor] = useState("There are no messages");
-    
-    const [colorArr, setColorArr] = useState([]);
 
-    const youGotColor = ( newColor ) => {
-      setCurrentColor( newColor );
+  const [color, setColor] = useState("");
+  const [colors, setColors] = useState([]);
+
+  const handleColor = (newColor) => {
+    setColor(newColor);
+    setColors(colors.push(newColor));
   }
-    
-    return (
-        <>
-            <MessageForm colorArr={colorArr} onNewMessage={ youGotColor } />
-            <MessageDisplay colorArr={colorArr} color={ currentColor } />
-        </>
-    );
+  return (
+    <>
+      <BoxForm colorArr={colors} setColor={handleColor} />
+      <Box colorArr={colors} />
+    </>
+  );
 }
-    
-export default App;
 
+export default App;
