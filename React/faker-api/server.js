@@ -14,7 +14,7 @@ const createUser = () => {
     phoneNumber: faker.phone.number(),
     lastName: faker.person.lastName(),
     firstName: faker.person.firstName(),
-    _id: faker.string.uuid(),
+    _id: faker.database.mongodbObjectId(),
   };
   return fakeUser;
 };
@@ -25,7 +25,7 @@ console.log(newFakeUsers);
 //################### FAKE COMPANY #####################
 const createCompany = () => {
   const fakeCompany = {
-    _id: faker.string.uuid(),
+    _id: faker.database.mongodbObjectId(),
     name: faker.company.name(),
     address: {
       street: faker.location.streetAddress(),
@@ -47,8 +47,9 @@ app.get("/api/users/new", (req, res) => res.json(createUser()));
 app.get("/api/company/new", (req, res) => res.json(createCompany()));
 
 app.get("/api/user/company", (req, res) =>
-  res.json({ User: createUser(), Company: createCompany() })
+res.json({ User: createUser(), Company: createCompany() })
 );
+
 
 //################### PORT #####################
 app.listen(port, () => console.log(`Listening on port: ${port}`));
