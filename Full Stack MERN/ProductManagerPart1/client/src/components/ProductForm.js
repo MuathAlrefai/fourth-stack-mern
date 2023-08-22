@@ -25,36 +25,39 @@ export default () => {
   };
   //onChange to update firstName and lastName
   return (
-    <form onSubmit={onSubmitHandler}>
-      <p>
-        <label>Title</label>
-        <br />
-        <input
-          type="text"
-          onChange={(e) => setTitle(e.target.value)}
-          value={title}
-        />
-      </p>
-      <p>
-        <label>Price</label>
-        <br />
-        <input
-          type="number"
-          step="0.01"
-          onChange={(e) => setPrice(e.target.value)}
-          value={price}
-        />
-      </p>
-      <p>
-        <label>description</label>
-        <br />
-        <input
-          type="text"
-          onChange={(e) => setDescription(e.target.value)}
-          value={description}
-        />
-      </p>
-      <input type="submit" />
-    </form>
+    <>
+      <h1>Product Manager</h1>
+      <form onSubmit={onSubmitHandler}>
+        <p>
+          <label>Title</label>
+          <br />
+          <input
+            type="text"
+            onChange={(e) => setTitle(e.target.value)}
+            value={title}
+          />
+        </p>
+        <p>
+          <label>Price</label>
+          <br />
+          <input
+            type="number"
+            step="0.01"
+            onChange={(e) => setPrice(e.target.value)}
+            value={price}
+          />
+        </p>
+        <p>
+          <label>description</label>
+          <br />
+          <input
+            type="text"
+            onChange={(e) => setDescription(e.target.value)}
+            value={description}
+          />
+        </p>
+        <input type="submit" value="Create" />
+      </form>
+    </>
   );
 };
